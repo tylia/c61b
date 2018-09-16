@@ -12,7 +12,7 @@ public class ArrayDeque<T> {
     }
 
     public void addFirst(T item) {
-        if (isFull()){
+        if (isEmpty()){
             resize();
         }
         deque[nextFirst] = item;
@@ -21,7 +21,7 @@ public class ArrayDeque<T> {
     }
 
     public void addLast(T item) {
-        if (isFull()){
+        if (isEmpty()){
             resize();
         }
         deque[nextLast] = item;
@@ -29,7 +29,7 @@ public class ArrayDeque<T> {
         size += 1;
     }
 
-    public int movePointer(int next, int length, int moveDirection) {
+    private int movePointer(int next, int length, int moveDirection) {
         int pointer = next + moveDirection;
         if (pointer == -1) {
             return length - 1;
@@ -40,7 +40,7 @@ public class ArrayDeque<T> {
         return pointer;
     }
 
-    private boolean isFull() {
+    public boolean isEmpty() {
         if (size == deque.length) {
             return true;
         }
@@ -66,15 +66,15 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-        
+
         if (index >= deque.length) {
             return null;
         }
-        
+
         if (nextFirst == deque.length - 1) {
             return deque[index];
         }
-        
+
         int posZero = nextFirst + 1;
 
         if (posZero + index >= deque.length) {
@@ -91,7 +91,7 @@ public class ArrayDeque<T> {
             T firstValue = deque[nextFirst];
             deque[nextFirst] = null;
             size -= 1;
-            if (size/deque.length < 0.25 && deque.length >= 16) {
+            if (size%deque.length > 0.25 && deque.length >= 16) {
                 downsize();
             }
             return firstValue;
@@ -99,12 +99,13 @@ public class ArrayDeque<T> {
             return null;
         }
     }
+
     public T removeLast() {
         nextLast = movePointer(nextLast, deque.length, -1);
         T lastValue = deque[nextLast];
         deque[nextLast] = null;
         size -= 1;
-        if (size/deque.length < 0.25 && deque.length >= 16) {
+        if (size%deque.length < 0.25 && deque.length >= 16) {
             downsize();
         }
         return lastValue;
