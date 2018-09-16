@@ -46,8 +46,8 @@ public class ArrayDeque<T> {
         }
         return false;
     }
-	
-	public boolean isEmpty() {
+
+    public boolean isEmpty() {
         if (size == 0) {
             return true;
         }
@@ -85,7 +85,7 @@ public class ArrayDeque<T> {
         int posZero = nextFirst + 1;
 
         if (posZero + index >= deque.length) {
-            return deque[(posZero + index)%deque.length - 1];
+            return deque[(posZero + index)%(deque.length - 1)];
         }
         else {
             return deque[posZero + index];
