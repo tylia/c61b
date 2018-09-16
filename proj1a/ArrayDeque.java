@@ -12,7 +12,7 @@ public class ArrayDeque<T> {
     }
 
     public void addFirst(T item) {
-        if (isEmpty()){
+        if (isFull()){
             resize();
         }
         deque[nextFirst] = item;
@@ -21,7 +21,7 @@ public class ArrayDeque<T> {
     }
 
     public void addLast(T item) {
-        if (isEmpty()){
+        if (isFull()){
             resize();
         }
         deque[nextLast] = item;
@@ -40,8 +40,15 @@ public class ArrayDeque<T> {
         return pointer;
     }
 
-    public boolean isEmpty() {
+    private boolean isFull() {
         if (size == deque.length) {
+            return true;
+        }
+        return false;
+    }
+	
+	private boolean isEmpty() {
+        if (size == 0) {
             return true;
         }
         return false;
