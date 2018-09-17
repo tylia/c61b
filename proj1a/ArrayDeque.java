@@ -57,8 +57,8 @@ public class ArrayDeque<T> {
     private void resize() {
         T[] copy = (T[]) new Object[deque.length * 2];
 
-        if (nextFirst == -1){
-            System.arraycopy(deque, 0, copy, 0, nextLast - 1);
+        if (nextFirst == deque.length - 1){
+            System.arraycopy(deque, 0, copy, 0, size);
         } else {
             System.arraycopy(deque, nextFirst + 1, copy, 0, deque.length - 1 - nextFirst);
             System.arraycopy(deque, 0, copy, deque.length - 1 - nextFirst, nextLast);
