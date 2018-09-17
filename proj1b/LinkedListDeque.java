@@ -1,4 +1,4 @@
-public class LinkedListDeque<T> implements Deque<T>{
+public class LinkedListDeque<T> implements Deque<T> {
 
     private DLNode sentinel;
     private int size;
@@ -98,8 +98,6 @@ public class LinkedListDeque<T> implements Deque<T>{
             sentinel.previous = sentinel.next;
         } else {
             sentinel.next = new DLNode(first, sentinel.next, sentinel);
-            //sentinel.previous.previous = sentinel.next;
-            //sentinel.next.previous = sentinel;
             sentinel.next.next.previous = sentinel.next;
         }
         size += 1;
@@ -111,11 +109,9 @@ public class LinkedListDeque<T> implements Deque<T>{
             sentinel.next = new DLNode(last, sentinel, sentinel);
             sentinel.previous = sentinel.next;
         } else {
-            //sentinel.previous = new DLNode(last, sentinel, sentinel.previous);
             sentinel.previous.next = new DLNode(last, sentinel, sentinel.previous);
             sentinel.previous = sentinel.previous.next;
         }
-
         size += 1;
     }
 
