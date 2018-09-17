@@ -89,8 +89,7 @@ public class ArrayDeque<T> {
 
         if (posZero + index >= deque.length) {
             return deque[(posZero + index) % deque.length];
-        }
-        else {
+        } else {
             return deque[posZero + index];
         }
     }
