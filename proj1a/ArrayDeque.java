@@ -123,7 +123,7 @@ public class ArrayDeque<T> {
     }
 
     private void downsize() {
-        T[] copy = (T[]) new Object[deque.length * 3 / 4];
+        T[] copy = (T[]) new Object[deque.length / 2];
 
         int startingPosition = movePointer(nextFirst, deque.length, 1);
         for (int i = startingPosition, index = 0; index < size; i++, index++) {
