@@ -100,7 +100,7 @@ public class ArrayDeque<T> {
             T firstValue = deque[nextFirst];
             deque[nextFirst] = null;
             size -= 1;
-            if (size / deque.length > 0.25 && deque.length >= 8) {
+            if (size / deque.length >= 0.25 && deque.length >= 8) {
                 downsize();
             }
             return firstValue;
@@ -114,7 +114,7 @@ public class ArrayDeque<T> {
             T lastValue = deque[nextLast];
             deque[nextLast] = null;
             size -= 1;
-            if (size / deque.length > 0.25 && deque.length >= 8) {
+            if (size / deque.length >= 0.25 && deque.length >= 8) {
                 downsize();
             }
             return lastValue;
