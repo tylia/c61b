@@ -79,8 +79,11 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-
         if (index >= deque.length) {
+            return null;
+        }
+
+        if (size == 0) {
             return null;
         }
 
@@ -108,20 +111,22 @@ public class ArrayDeque<T> {
                 downsize();
             }
             return firstValue;
-        } else {
-            return null;
         }
+        return null;
     }
 
     public T removeLast() {
-        nextLast = movePointer(nextLast, deque.length, -1);
-        T lastValue = deque[nextLast];
-        deque[nextLast] = null;
-        size -= 1;
-        if (size%deque.length < 0.25 && deque.length >= 16) {
-            downsize();
+        if (size > 0) {
+            nextLast = movePointer(nextLast, deque.length, -1);
+            T lastValue = deque[nextLast];
+            deque[nextLast] = null;
+            size -= 1;
+            if (size%deque.length < 0.25 && deque.length >= 16) {
+                downsize();
+            }
+            return lastValue;
         }
-        return lastValue;
+        return null;
     }
 
     private void downsize() {
@@ -134,7 +139,7 @@ public class ArrayDeque<T> {
             i = movePointer(i, deque.length, 0);
             copy[index] = deque[i];
         }
-        
+
         deque = copy;
         nextLast = size;
         nextFirst = deque.length - 1;
