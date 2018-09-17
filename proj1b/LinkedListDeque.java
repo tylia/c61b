@@ -8,75 +8,75 @@ public class LinkedListDeque<T> implements Deque<T>{
         size = 0;
     }
 
-    public static void main(String[] args) {
-        ArrayDeque<Integer> ArrayDeque = new ArrayDeque();
-//        deque.addLast(1);
-//        deque.addLast(5);
-//        deque.addFirst(8);
-//        deque.addFirst(2);
-//        deque.addFirst(4);
-//        deque.addFirst(5);
-//        deque.addFirst(10);
-//        deque.addFirst(55);
-//        deque.addLast(23);
-////        System.out.println(deque.get(4));
-////        System.out.println(deque.get(5));
-////        System.out.println(deque.get(0));
-//        System.out.println(deque.removeFirst());
-//        System.out.println(deque.removeFirst());
-//        System.out.println(deque.removeFirst());
-//        System.out.println(deque.removeFirst());
-//        System.out.println(deque.removeFirst());
-//        System.out.println(deque.removeFirst());
-//        System.out.println(deque.removeFirst());
-/*        ArrayDeque.addFirst(0);
-        ArrayDeque.removeFirst();
-        ArrayDeque.addFirst(2);
-        ArrayDeque.addLast(3);
-        System.out.println(ArrayDeque.get(0));
-        ArrayDeque.addLast(5);
-        System.out.println(ArrayDeque.get(0));
-        System.out.println(ArrayDeque.get(2));
-        System.out.println(ArrayDeque.get(1));
-        System.out.println(ArrayDeque.get(0));
-        ArrayDeque.addLast(10);
-        ArrayDeque.addLast(11);
-        ArrayDeque.removeFirst();
-        System.out.println(ArrayDeque.get(0));
-        System.out.println(ArrayDeque.get(3));
-        ArrayDeque.removeFirst();
-        ArrayDeque.addFirst(16);
-        ArrayDeque.addLast(17);
-        System.out.println(ArrayDeque.get(4));*/
-
-
-        ArrayDeque.addLast(0);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(5);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(9);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(3);
-        ArrayDeque.addLast(11);
-        System.out.println(ArrayDeque.get(0));
-
-    }
+//    public static void main(String[] args) {
+//        ArrayDeque<Integer> ArrayDeque = new ArrayDeque();
+////        deque.addLast(1);
+////        deque.addLast(5);
+////        deque.addFirst(8);
+////        deque.addFirst(2);
+////        deque.addFirst(4);
+////        deque.addFirst(5);
+////        deque.addFirst(10);
+////        deque.addFirst(55);
+////        deque.addLast(23);
+//////        System.out.println(deque.get(4));
+//////        System.out.println(deque.get(5));
+//////        System.out.println(deque.get(0));
+////        System.out.println(deque.removeFirst());
+////        System.out.println(deque.removeFirst());
+////        System.out.println(deque.removeFirst());
+////        System.out.println(deque.removeFirst());
+////        System.out.println(deque.removeFirst());
+////        System.out.println(deque.removeFirst());
+////        System.out.println(deque.removeFirst());
+///*        ArrayDeque.addFirst(0);
+//        ArrayDeque.removeFirst();
+//        ArrayDeque.addFirst(2);
+//        ArrayDeque.addLast(3);
+//        System.out.println(ArrayDeque.get(0));
+//        ArrayDeque.addLast(5);
+//        System.out.println(ArrayDeque.get(0));
+//        System.out.println(ArrayDeque.get(2));
+//        System.out.println(ArrayDeque.get(1));
+//        System.out.println(ArrayDeque.get(0));
+//        ArrayDeque.addLast(10);
+//        ArrayDeque.addLast(11);
+//        ArrayDeque.removeFirst();
+//        System.out.println(ArrayDeque.get(0));
+//        System.out.println(ArrayDeque.get(3));
+//        ArrayDeque.removeFirst();
+//        ArrayDeque.addFirst(16);
+//        ArrayDeque.addLast(17);
+//        System.out.println(ArrayDeque.get(4));*/
+//
+//
+//        ArrayDeque.addLast(0);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(5);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(9);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(3);
+//        ArrayDeque.addLast(11);
+//        System.out.println(ArrayDeque.get(0));
+//
+//    }
 
     @Override
     public boolean isEmpty() {
