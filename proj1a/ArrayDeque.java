@@ -12,7 +12,7 @@ public class ArrayDeque<T> {
     }
 
     public void addFirst(T item) {
-        if (isFull()){
+        if (isFull()) {
             resize();
         }
         deque[nextFirst] = item;
@@ -21,7 +21,7 @@ public class ArrayDeque<T> {
     }
 
     public void addLast(T item) {
-        if (isFull()){
+        if (isFull()) {
             resize();
         }
         deque[nextLast] = item;
@@ -57,14 +57,8 @@ public class ArrayDeque<T> {
     private void resize() {
         T[] copy = (T[]) new Object[deque.length * 2];
 
-/*        if (nextFirst == deque.length - 1){
-            System.arraycopy(deque, 0, copy, 0, size);
-        } else {
-            System.arraycopy(deque, nextFirst + 1, copy, 0, deque.length - 1 - nextFirst);
-            System.arraycopy(deque, 0, copy, deque.length - 1 - nextFirst, nextLast);
-        }*/
-
-        for (int i = movePointer(nextFirst, deque.length, 1), index = 0; index < size; i++, index++) {
+        int startingPosition = movePointer(nextFirst, deque.length, 1);
+        for (int i = startingPosition, index = 0; index < size; i++, index++) {
             i = movePointer(i, deque.length, 0);
             copy[index] = deque[i];
         }
@@ -94,7 +88,7 @@ public class ArrayDeque<T> {
         int posZero = nextFirst + 1;
 
         if (posZero + index >= deque.length) {
-            return deque[(posZero + index)%deque.length];
+            return deque[(posZero + index) % deque.length];
         }
         else {
             return deque[posZero + index];
@@ -107,7 +101,7 @@ public class ArrayDeque<T> {
             T firstValue = deque[nextFirst];
             deque[nextFirst] = null;
             size -= 1;
-            if (size/deque.length > 0.25 && deque.length >= 16) {
+            if (size / deque.length > 0.25 && deque.length >= 16) {
                 downsize();
             }
             return firstValue;
@@ -121,7 +115,7 @@ public class ArrayDeque<T> {
             T lastValue = deque[nextLast];
             deque[nextLast] = null;
             size -= 1;
-            if (size/deque.length > 0.25 && deque.length >= 16) {
+            if (size / deque.length > 0.25 && deque.length >= 16) {
                 downsize();
             }
             return lastValue;
@@ -130,12 +124,10 @@ public class ArrayDeque<T> {
     }
 
     private void downsize() {
-        T[] copy = (T[]) new Object[deque.length * 3/4];
-/*        for (int i = movePointer(nextFirst, deque.length, 1), index = 0; i <= size; i++, index++) {
-            copy[index] = deque[i];
-        }*/
+        T[] copy = (T[]) new Object[deque.length * 3 / 4];
 
-        for (int i = movePointer(nextFirst, deque.length, 1), index = 0; index < size; i++, index++) {
+        int startingPosition = movePointer(nextFirst, deque.length, 1);
+        for (int i = startingPosition, index = 0; index < size; i++, index++) {
             i = movePointer(i, deque.length, 0);
             copy[index] = deque[i];
         }
