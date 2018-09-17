@@ -57,16 +57,13 @@ public class ArrayDeque<T> {
     private void resize() {
         T[] copy = (T[]) new Object[deque.length * 2];
 
-//        if (nextFirst == -1){
-//            System.arraycopy(deque, 0, copy, 0, nextLast - 1);
-//        } else {
-//            System.arraycopy(deque, nextFirst + 1, copy, 0, deque.length - 1 - nextFirst);
-//            System.arraycopy(deque, 0, copy, deque.length - 1 - nextFirst, nextLast);
-//        }
-        for (int i = movePointer(nextFirst, deque.length, 1), index = 0; i <= size; i++, index++) {
-            copy[index] = deque[i];
+        if (nextFirst == -1){
+            System.arraycopy(deque, 0, copy, 0, nextLast - 1);
+        } else {
+            System.arraycopy(deque, nextFirst + 1, copy, 0, deque.length - 1 - nextFirst);
+            System.arraycopy(deque, 0, copy, deque.length - 1 - nextFirst, nextLast);
         }
-        
+
         nextLast = deque.length;
         deque = copy;
         nextFirst = deque.length - 1;
@@ -130,5 +127,11 @@ public class ArrayDeque<T> {
         deque = copy;
         nextLast = size;
         nextFirst = deque.length - 1;
+    }
+
+    public void printDeque() {
+        for (int i = movePointer(nextFirst, deque.length, 1), index = 0; i <= size; i++, index++) {
+            System.out.println(deque[i]);
+        }
     }
 }

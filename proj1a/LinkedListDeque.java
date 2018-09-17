@@ -8,26 +8,6 @@ public class LinkedListDeque<T> {
         size = 0;
     }
 
-    public static void main(String[] args) {
-        LinkedListDeque<Integer> test = new LinkedListDeque<>();
-        test.addLast(1010);
-        test.addFirst(2);
-        test.addFirst(8);
-        test.addLast(6);
-        test.addLast(101);
-        test.addLast(55);
-        test.addFirst(88);
-        System.out.println("remove first: " + test.removeFirst());
-        System.out.println("remove last: " + test.removeLast());
-        System.out.println("remove first: " + test.removeFirst());
-        System.out.println("remove last: " + test.removeLast());
-        System.out.println("remove first: " + test.removeFirst());
-        System.out.println("remove last: " + test.removeLast());
-        System.out.println("get index: " + test.getRecursive(1));
-        System.out.println("Size: " + test.size());
-        test.printDeque();
-    }
-
     public boolean isEmpty() {
         if (size == 0) {
             return true;
